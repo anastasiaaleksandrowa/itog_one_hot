@@ -8,6 +8,7 @@ random.shuffle(lst)
 data = pd.DataFrame({'whoAmI'lst})
 # получаем one-hot encoding
 one_hot = pd.get_dummies(data['whoAmi'])
-
-# data.head()
+# объеденяем исходный dataFrame с  one-hot
+data = pd.concat([data, one_hot], axis=1)
+data.head()
 
