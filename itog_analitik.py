@@ -5,9 +5,9 @@ import random
 lst = ['robot'] * 10
 lst += ['human'] * 10
 random.shuffle(lst)
-data = pd.DataFrame({'whoAmI'lst})
+data = pd.DataFrame({'whoAmI':lst})
 # получаем one-hot encoding
-one_hot = pd.get_dummies(data['whoAmi'])
+one_hot = pd.get_dummies(data['whoAmI'])
 # объеденяем исходный dataFrame с  one-hot
 data = pd.concat([data, one_hot], axis=1)
 data.head()
